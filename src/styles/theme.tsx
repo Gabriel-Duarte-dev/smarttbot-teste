@@ -9,7 +9,7 @@ const colors = {
   },
   gray: {
     "50": "#E3E2E3",
-    "100": "#DFDFDF",
+    "100": "#BEBDBF",
     "200": "#BCC3CD",
     "300": "#A2ABB9",
     "400": "#8893A5",
@@ -20,10 +20,12 @@ const colors = {
     "900": "#16191D",
     "regular": "#888689",
     "low": "#B1B0B2",
-    "iconAddBot": "#E3E2E3"
+    "iconAddBot": "#E3E2E3",
+    "medium": "#959AA2"
   },
   cyan: {
-    "main": "#15B8A1"
+    "primary": "#15B8A1",
+    "secondary": "#00B39D"
   },
   price: {
       "negative": "#FF4501"

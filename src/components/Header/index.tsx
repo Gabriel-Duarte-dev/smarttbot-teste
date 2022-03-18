@@ -12,7 +12,7 @@ export default function Header() {
         </BreadcrumbItem>
 
         <BreadcrumbItem>
-          <BreadcrumbLink isCurrentPage href="#" fontWeight='400' color='cyan.main'>Principal</BreadcrumbLink>
+          <BreadcrumbLink isCurrentPage href="#" fontWeight='500' color='cyan.secondary'>Principal</BreadcrumbLink>
         </BreadcrumbItem>
       </Breadcrumb>
     </Flex>
