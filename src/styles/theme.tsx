@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, ThemeConfig } from "@chakra-ui/react";
 
 const colors = {
   transparent: "transparent",
@@ -20,7 +20,7 @@ const colors = {
     "900": "#16191D",
     "regular": "#888689",
     "low": "#B1B0B2",
-    "iconAddBot": "#E3E2E3",
+    "veryLow": "#E3E2E3",
     "medium": "#959AA2"
   },
   cyan: {
@@ -56,8 +56,14 @@ const styles = {
   },
 };
 
+const config: ThemeConfig = {
+  initialColorMode: 'light',
+  useSystemColorMode: false,
+}
+
 export const theme = extendTheme({
   colors,
   fonts,
   styles,
+  config
 });
