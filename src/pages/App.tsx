@@ -42,7 +42,7 @@ function App() {
         <AddRobot />
       </Skeleton>
 
-      <Flex w="100%" justify="space-between" wrap="wrap">
+      <Flex w="100%" justify={{base: 'center', sm: 'center', md: 'space-between'}} direction={{base: 'column', sm: 'column', md: 'row'}} wrap="wrap">
         {robots &&
           robots?.map((value, index) => {
             return <Card robots={value} isLoading={!isLoading} key={index} />;

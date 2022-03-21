@@ -11,23 +11,23 @@ type CardProps = {
 
 export function Card({robots, isLoading}: CardProps) {
   return (
-    <Skeleton isLoaded={isLoading} mb="16px">
+    <Skeleton w={{base: '100%', sm: '100%', md: '49%', lg: '330px'}} isLoaded={isLoading} mb="16px">
       <Box
-        w="330px"
+        w='100%'
         p="17px 25px"
         bg="white"
         boxShadow="md"
         transition="0.3s"
         _hover={{boxShadow: 'xl', cursor: 'pointer'}}
         rounded="md"
-        m="16px 0">
+        m='16px 0'>
         <Flex w="100%" justify="space-between" align="flex-start">
           <Box w="50%" overflow="hidden" wordBreak="keep-all">
             <Heading fontSize="sm" color="black.default" overflow="hidden" whiteSpace="nowrap" textOverflow="ellipsis">
               {robots?.title}
             </Heading>
             <Text fontSize="xs" color="gray.low">
-              {robots?.id}
+              #{robots?.id}
             </Text>
           </Box>
 

@@ -42,7 +42,7 @@ export default function Overview({overview}: OverviewProps) {
         <Flex w="100%" justify="space-between" align="center" wrap="wrap">
           {overview?.papers.map((papers, index) => {
             return (
-              <Flex w="45%" key={index} justify="space-between" align="center" mb="12px">
+              <Flex w={{base: '100%', sm: '100%', md: '45%'}} key={index} justify="space-between" align="center" mb="12px">
                 <Center>
                   <Tag size="md" variant="solid" bg="cyan.primary">
                     {papers.name}
