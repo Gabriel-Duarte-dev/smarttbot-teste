@@ -68,7 +68,7 @@ export function Card({robots, isLoading}: CardProps) {
 
             <Flex direction="column" align="flex-end">
               <Text fontSize="12px" color="gray.low">
-                {robots?.last_paper?.paper_value ?? 0}
+                {robots?.initial_capital}
               </Text>
               <Flex>
                 <Icon

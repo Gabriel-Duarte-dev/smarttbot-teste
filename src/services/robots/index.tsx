@@ -44,15 +44,7 @@ export type PostRobotsDTO = {
 }
 
 const getRobots = async () => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-      mode: 0,
-      limit: '10',
-    },
-  };
-
-  const {data} = await api.get('/robot', config);
+  const {data} = await api.get('/robot');
   return data;
 };
 

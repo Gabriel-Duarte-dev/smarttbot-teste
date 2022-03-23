@@ -13,20 +13,25 @@ function App() {
   // const {media} = useMedia();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [robots, setRobots] = useState<RobotsDTO[]>();
+  const [searchRobots, setSearchRobots] = useState<RobotsDTO[]>();
   const [overview, setOverview] = useState<OverviewsDTO>();
 
-  useEffect(() => {
+  async function loadingData() {
     setIsLoading(true);
-    async function showRobots() {
-      const responseRobots = await getRobots();
-      setRobots(responseRobots.data);
+    const responseRobots = await getRobots();
+    const data = responseRobots.data.reverse();
+    console.log(data.length);
+    setRobots(data);
+    setSearchRobots(data);
 
-      const responseOverviews = await getOverview();
-      setOverview(responseOverviews.data);
+    const responseOverviews = await getOverview();
+    setOverview(responseOverviews.data);
 
-      setIsLoading(false);
-    }
-    showRobots();
+    setIsLoading(false);
+  }
+
+  useEffect(() => {
+    loadingData();
   }, []);
   return (
     <Box p={30} bg={theme.light}>
@@ -38,11 +43,15 @@ function App() {
         <Overview overview={overview} />
       </Skeleton>
 
-      <Skeleton isLoaded={!isLoading} mb='16px'>
-        <AddRobot />
+      <Skeleton isLoaded={!isLoading} mb="16px">
+        <AddRobot setRobots={setRobots} searchRobots={searchRobots} createRobot={loadingData} />
       </Skeleton>
 
-      <Flex w="100%" justify={{base: 'center', sm: 'center', md: 'space-between'}} direction={{base: 'column', sm: 'column', md: 'row'}} wrap="wrap">
+      <Flex
+        w="100%"
+        justify={{base: 'center', sm: 'center', md: 'space-between'}}
+        direction={{base: 'column', sm: 'column', md: 'row'}}
+        wrap="wrap">
         {robots &&
           robots?.map((value, index) => {
             return <Card robots={value} isLoading={!isLoading} key={index} />;

@@ -11,9 +11,9 @@ export default function Overview({overview}: OverviewProps) {
       <Heading color="black.default" fontSize="16px" fontWeight="500" mb="24px">
         Resumo geral operações
       </Heading>
-      <Flex w="100%" justify="space-between">
-        <Box>
-          <Text color="gray.regular" fontSize="12px">
+      <Flex w="100%" justify={{base: 'flex-start', md: 'space-between'}} align={{base: 'flex-start', md: 'center'}} direction={{base: 'column', md: 'row'}}>
+        <Box mb={{base: '20px', md: 0}}>
+          <Text color="gray.regular" fontSize="12px" >
             Resumo de movimentações
           </Text>
           <Text
@@ -25,7 +25,7 @@ export default function Overview({overview}: OverviewProps) {
               : 'R$' + overview?.moviment_summary}
           </Text>
         </Box>
-        <Flex direction="column" align="flex-end">
+        <Flex direction="column" align={{base: 'flex-start', md: 'flex-end'}}>
           <Text color="gray.regular" fontSize="12px">
             Total de transações realizadas
           </Text>

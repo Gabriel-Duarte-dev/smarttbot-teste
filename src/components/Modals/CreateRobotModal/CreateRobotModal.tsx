@@ -21,9 +21,10 @@ type CreateRobotModalProps = {
   size?: string;
   isOpen: boolean;
   onClose: () => void;
+  createRobot: () => void;
 };
 
-export function CreateRobotModal({title, size, isOpen, onClose}: CreateRobotModalProps) {
+export function CreateRobotModal({title, size, isOpen, onClose, createRobot}: CreateRobotModalProps) {
   const toast = useToast();
 
   const [strategy, setStrategy] = useState<number>(2);
@@ -65,6 +66,8 @@ export function CreateRobotModal({title, size, isOpen, onClose}: CreateRobotModa
             isClosable: true,
             position: 'bottom-left',
           });
+
+          createRobot();
         }
         setTitleRobot('');
         setInitialCapital(0);
